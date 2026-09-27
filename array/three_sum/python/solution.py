@@ -32,12 +32,13 @@ class Solution:
                         _index != __index
                         and _index != ___index
                         and __index != ___index
-                        and exists is None
+                        and not exists
                     ):
                         sum = _num + __num + ___num
                         if sum == 0:
                             pair: list[int] = [_num, __num, ___num]
-                            record[key] = pair
+                            # print(exists, key, f"{_index}{__index}{___index}", pair)
+                            record[f"{_index}{__index}{___index}"] = pair
                             result.append(pair)
 
         return result
